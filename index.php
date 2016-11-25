@@ -1,18 +1,29 @@
 <?php
+	
+mysql_connect('localhost','root','password') or die (mysql_error("could not connect"));
+mysql_select_db('search_bar_tutorial') or die ("could not find db");
+$output ='';	
 
-    if($_GET['q'] == 'Search...'){
-        header('Location:index.php');
-    }
-    if($_GET['q'] !== ''){
-        $con = mysql_connect('localhost','root','');
-        $db = mysql_select_db('search_bar_tutorial');
+if(isset($_POST['search'])){
+	$searchq = $_POST['search'];
+	$searchq = preg_replace("#[^0-9a-z]#i","",$searchq);
+	$query = mysql_query("SELECT * FROM products WHERE title LIKE '%$searchq%'") or die("could not search");
+	$count = mysql_num_rows($query);
+	if($count == 0){
+		$output ='no result';
+	}else{
+		while($row = mysql_fetch_array($query)){
+			$title = $row['title'];
+			$description = $row['description'];
 
-
+			$output .= '<div> '.$title.' '.$description.'</div>';
+		}
+	}
+}
 ?>
-<!Doctype html>
-<html>
+<!DOCTYPE html>
 	<head>
-		<tittle>search bar</tittle>
+		<tittle></tittle>
 		<link rel="stylesheet" href="css/style.css" />
 		<script type="text/javascript">
 			function active(){
@@ -34,30 +45,10 @@
 		</script>
 	<head>
 	<body>
-			<form action="index.php" method="GET" id="searchForm" />
-				<input type="text" name="q" id="searchBox" placeholder="" value="search..." maxlength="25" autocomplete="off" onmousedown="active();" onblur="inactive()" /><input type="submit" id="searchBtn" value="Go!" />
+			<form action="index.php" method="post" id="searchForm">
+				<input type="text" name="search" id="searchBar" placeholder="Search for members..." maxlength="25" autocomplete="off" onmousedown="active();" onblur="inactive()"  /><input type="submit" id="searchBtn" value="Go!" />
 			</form>
-			<?php
-                if(!isset($q)){
-                    echo '';
-                }else {
-                    $query = mysql_query("SELECT * FORM products WHERE title LIKE '%$q%' OR description LIKE '%$q%'");
-                    $num_rows = mysql_num_rows($query);
-                    ?>
-                    <p><strong><?php echo $num_rows; ?></strong> result for '<?php echo $q; ?>'</p>
-                    while ($row = mysql_fetch_array($query)) {
-                        $id = $row['id'];
-                        $tittle = $row['tittle'];
-                        $desc = $row['description'];
-
-                        echo '<h3>' . '' . $tittle . '' . $desc . '<br />';
-                    }
-                }
-			?>
+	<?php print("$output")?>
+			
 	</body>
 </html>
-<?php
-    }else{
-        header('locationL: index.php');
-    }
-?>
