@@ -31,3 +31,15 @@
 	background: #f6e049;
 
 }
+body {
+	font-family:arial;
+}
+
+h3 {
+	margin:20px 0px 0px 0px;
+	paddong:0;
+}
+p {
+	margin:0;
+	padding:0;
+}
