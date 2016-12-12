@@ -1,6 +1,6 @@
 <?php
 	
-mysql_connect('localhost','root','password') or die (mysql_error("could not connect"));
+mysql_connect('localhost','root',123) or die (mysql_error("could not connect"));
 //mysql_select_db('plant-range mapping') or die ("could not find db");
 $output ='';	
 
@@ -44,7 +44,7 @@ $parnode = $dom->appendChild($node);
 
 // Opens a connection to a MySQL server
 
-$connection=mysql_connect ('localhost', 'root', 'password');
+$connection=mysql_connect ('localhost', 'root', 123);
 if (!$connection) {  die('Not connected : ' . mysql_error());}
 
 // Set the active MySQL database
@@ -87,51 +87,64 @@ $dom->save("test.xml");
 }
 ?>
 <!DOCTYPE html>
-	<head>
-		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-    	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-		<tittle></tittle>
-		<link rel="stylesheet" href="css/style.css" />
-		<style>
-			#map {
-        height: 100%;
-        width: 50%;
-        float: right;
-      }
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+      <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <tittle></tittle>
+    <link rel="stylesheet" href="css/style2.css" />
+    <style>
+
       /* Optional: Makes the sample page fill the window. */
       html, body {
         height: 100%;
         margin: 0;
         padding: 0;
       }
-			table, th, td {
-    			border: 1px solid black;
-			}
-		</style>
-		<script type="text/javascript">
-			function active(){
-				var searchBar = document.getElementById('searchBar');
+      table, th, td {
+          border: 1px solid black;
+      }
 
-				if(searchBar.value == 'search...'){
-					searchBar.value =''
-					searchBar.placeholder = 'search...'
-				}
-			}
-			function inactive(){
-				var searchBar = document.getElementById('searchBar');
+      body {
+              background-image: url("http://steps-centre.org/wp-content/uploads/indiaseed.jpg");
+              background-size: cover;
+      }
+      
 
-				if(searchBar.value == ''){
-					searchBar.value ='search...'
-					searchBar.placeholder = ''
-				}
-			}
-		</script>
-	<head>
-	<body>
-			<form action="index1.php" method="post" id="searchForm">
-				<input type="text" name="search" id="searchBar" placeholder="Search for members..." maxlength="25" autocomplete="off" onmousedown="active();" onblur="inactive()"  /><input type="submit" id="searchBtn" value="Go!" />
-			</form>
-			<div id="map"></div>
+    </style>
+
+
+    <script type="text/javascript">
+      function active(){
+        var searchBar = document.getElementById('searchBar');
+
+        if(searchBar.value == 'search...'){
+          searchBar.value =''
+          searchBar.placeholder = 'search...'
+        }
+      }
+      function inactive(){
+        var searchBar = document.getElementById('searchBar');
+
+        if(searchBar.value == ''){
+          searchBar.value ='search...'
+          searchBar.placeholder = ''
+        }
+      }
+    </script>
+  </head>
+  <body>
+  <div id="search_bar_div">
+      <form action="index1.php" method="post" id="searchForm">
+      
+        <input type="text" name="search" id="searchBar" placeholder="Search Product" maxlength="25" autocomplete="off" onmousedown="active();" onblur="inactive()"  />
+        <div id="button_div">
+        <input type="submit" id="searchBtn" value="Go!" />
+        </div>
+      </form>
+
+      <a href="index.html" style = "color:white">Home Page</a>
+      </div>
+      <div id="map"></div>
 
     <script>
       var customLabel = {
@@ -208,25 +221,25 @@ $dom->save("test.xml");
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANgC3c_PB2k-eKeiPSh3DrysvEb7LzfuY&callback=initMap">
     </script>
-			<br></br>
-			<p>Detailes</p>
-			<table style="width:30%">
-			<tr>
-			    <th></th>
-			    <th>PIDN range</th> 
-			    <th>SOC range</th>
-			    <th>ph range</th>
-			    <th>Ca range</th>
-			    <th>P range</th>
-			</tr>
-			<?php 
-			echo $output;
-			?>
+      <br></br>
+      <p style = "color:white">Detailes</p>
+      <table style="width:30%">
+      <tr style = "color:white">
+          <th></th>
+          <th>PIDN range</th> 
+          <th>SOC range</th>
+          <th>ph range</th>
+          <th>Ca range</th>
+          <th>P range</th>
+      </tr>
+      <?php 
+      echo $output;
+      ?>
 
   
 </table>
 
-	
-			
-	</body>
+  
+      
+  </body>
 </html>
