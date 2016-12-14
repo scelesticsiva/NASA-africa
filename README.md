@@ -6,3 +6,7 @@ Mahcine learning algorithms we are going to implement:
 1)Linear regression
 2)Random Forest
 3)Support Vecotor Machines
+our project is in the website forder,all you need are in there.
+The first thing you need to do is to build a local host, the detail for this and the method of downloading the data base app could be found in the link below:
+
+then you need to put all the file in the fold to the webserver of your local host, 
