@@ -9,7 +9,7 @@ Mahcine learning algorithms we are going to implement:
 
 Since the dataset we used only have five soil properties, our machine learning code is essentially limited to predicting those five features of the soil, however our python code is extendible to any number of features. This complete code can be found in complete_three_algorithms.py
 
-Our project is in the website forder, all you need to do here is to download this folder, copy it to the localhost directory and redirect it to product.html.
+Our project is in the website folder, all you need to do here is to download this folder, copy it to the localhost directory and redirect it to product.html.
 To setup apache server,php,mysql database in a mac machine, here is the link,
 https://www.youtube.com/watch?v=b_6g_5S_bVo
 
