@@ -20,11 +20,11 @@ The whole website is in the website folder.
 
 ##  Dependencies
 
--Numpy
--Scikit-learn
--apache server
--php
--mysql
+- Numpy
+- Scikit-learn
+- apache server
+- php
+- mysql
 
 To setup apache server,php,mysql database in a mac machine, here is the link,
 https://www.youtube.com/watch?v=b_6g_5S_bVo
