@@ -27,6 +27,8 @@ The whole website is in the website folder.
 - mysql
 
 To setup apache server,php,mysql database in a mac machine, here is the link,
+```
 https://www.youtube.com/watch?v=b_6g_5S_bVo
+```
 
 
