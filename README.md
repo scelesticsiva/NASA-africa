@@ -6,9 +6,9 @@ The dataset from kaggle competition of african soil prediction was used to build
 
 We used scikit-learn to build our machine learning models and the ML algorithms used were,
 
-Linear Regression
-Random Forest Regression
-Support Vector Machines(using polynomial and radial basis function kernels)
+- Linear Regression
+- Random Forest Regression
+- Support Vector Machines(using polynomial and radial basis function kernels)
 
 The predictions of ML models were loaded onto mysql databases which is connected to the front end of the website through xml and javascript.
 
