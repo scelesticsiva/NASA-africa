@@ -1,15 +1,31 @@
-# NASA-africa
+# African soil properties
 
-This is a part of EC601 project in which we have planned to build a website which would display information on the different crops which can be favourly grown in different regions of africa. We have planned to use the dataset available from kaggle african soil competition to train the machine learning model we are building. The predicted results will be mapped onto the list of crops which inturn will be mapped to the website.
+The goal of this project is to develop a website(with Google maps API) for farmers to enable them to choose the crops depending on the soil properties in the area they are living in. 
 
-Mahcine learning algorithms we are going to implement:
-1)Linear regression
-2)Random Forest
-3)Support Vecotor Machines
+The dataset from kaggle competition of african soil prediction was used to build machine learning models which formed the back end of our website.
+
+We used scikit-learn to build our machine learning models and the ML algorithms used were,
+
+Linear Regression
+Random Forest Regression
+Support Vector Machines(using polynomial and radial basis function kernels)
+
+The predictions of ML models were loaded onto mysql databases which is connected to the front end of the website through xml and javascript.
+
+Every time, the farmer enters a crop in the search bar, the particular crop locations are retrieved from the database and the xml file is updated. Javascript in the front end of the website reads the xml file to display the corresponding locations in the Google maps.
 
 Since the dataset we used only have five soil properties, our machine learning code is essentially limited to predicting those five features of the soil, however our python code is extendible to any number of features. This complete code can be found in complete_three_algorithms.py
 
-Our project is in the website folder, all you need to do here is to download this folder, copy it to the localhost directory and redirect it to product.html.
+The whole website is in the website folder.
+
+##  Dependencies
+
+Numpy
+Scikit-learn
+apache server
+php
+mysql
+
 To setup apache server,php,mysql database in a mac machine, here is the link,
 https://www.youtube.com/watch?v=b_6g_5S_bVo
 
