@@ -10,11 +10,11 @@ We used scikit-learn to build our machine learning models and the ML algorithms 
 - Random Forest Regression
 - Support Vector Machines(using polynomial and radial basis function kernels)
 
-The predictions of ML models were loaded onto mysql databases which is connected to the front end of the website through xml and javascript.
+The predictions of ML models were loaded onto mysql databases which was connected to the front end of the website through xml and javascript.
 
-Every time, the farmer enters a crop in the search bar, the particular crop locations are retrieved from the database and the xml file is updated. Javascript in the front end of the website reads the xml file to display the corresponding locations in the Google maps.
+Every time, the farmer enters a crop in the search bar, the particular crop locations are retrieved from the database and the xml file is updated. Javascript which forms the front end of the website reads the xml file to display the corresponding locations in Google maps.
 
-Since the dataset we used only have five soil properties, our machine learning code is essentially limited to predicting those five features of the soil, however our python code is extendible to any number of features. This complete code can be found in complete_three_algorithms.py
+Since the dataset we used only had five soil properties, our machine learning code was essentially limited to predicting those five features of the soil, however our python code is extendible to any number of features. This complete code can be found in complete_three_algorithms.py
 
 The whole website is in the website folder.
 
